@@ -42,8 +42,7 @@ if __name__ == "__main__":
     teller2 = 0
     liste_objekt = lesefil()
     for spm in liste_objekt:
-        print(spm.sporsmaal)
-        print(spm.alternativ)
+        print(spm)
         spiller1 = int(input("Spiller1: hva er svaret?: "))
                         
         spiller2 = int(input(" Spiller2: hva er svaret?: "))
@@ -51,7 +50,7 @@ if __name__ == "__main__":
 
         print(f"korekt svar er: {spm.korekt_svar_tekst()}")
                 
-        if spiller1 == spm.rett_svar:
+        if spm.sjekk_svar(spiller1):
             print ("svar er korekt")
             teller1 += 1
             print(f"spiller1 har {teller1} korekt svar!")
@@ -63,3 +62,5 @@ if __name__ == "__main__":
             print(f"spiller 2 gar {teller2} korekt svar!")
         else:
             print("feil svar")
+        print()
+    print(f"Spiller 1 fikk {teller1}/{len(liste_objekt)}")

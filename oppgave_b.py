@@ -15,21 +15,23 @@ class Sporsmaal:
     def sjekk_svar(self, svar_avgitt):
         if svar_avgitt == self.rett_svar:
             print ("Svaret er korrekt")
+            return True
         else:
             print ("feil")
+            return False
     
     def __str__(self):
         temp = self.sporsmaal
         for i in range(len(self.alternativ)):
         
-            temp += "\n" + str(i+1)
+            temp += "\n" + str(i)
             
             temp += self.alternativ[i]
         return temp
         
     def korekt_svar_tekst(self):
         
-        return self.alternativ[int(self.rett_svar) -1]
+        return self.alternativ[int(self.rett_svar)]
         
         
         
